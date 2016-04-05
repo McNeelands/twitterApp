@@ -1,10 +1,23 @@
+<img src="http://www.darrylburma.com/wp-content/uploads/2012/01/body-bg-blue-02.jpg" class="background-image">
+
 <div class="login">
   <div class="container">
+    <div class="row">
+        <div class="col-lg-7 col-lg-offset-2 text-center">
+          <br>
+          <br>
+          <div class="form">
+          <h1 id="header">Sign In</h1>
 
-    <%= form_for(:session, url: login_path) do |f| %>
-			  <%= f.email_field :email, :placeholder => "Email" %>
-			  <%= f.password_field :password, :placeholder => "Password" %>
-			  <%= f.submit "Log in", class: "btn-submit" %>
-			<% end %>
+
+          <%= form_for(:session, url: login_path) do |f| %>
+      			  <%= f.email_field :email, :placeholder => "Email" %>
+      			  <%= f.password_field :password, :placeholder => "Password" %>
+      			  <%= f.submit "Sign in", class: "btn-submit" %>
+      			<% end %>
+
+          </div>
+        </div>
+    </div>
   </div>
 </div>
