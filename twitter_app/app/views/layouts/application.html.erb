@@ -17,7 +17,7 @@
 
 </head>
 <body>
-  
+
   <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -38,12 +38,20 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
+                    <!-- Your code here -->
+                    <% if current_user %>
+
+                      <li><%= current_user.email %></li>
+                      <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+
+                    <% else %>
+
+                      <li><%= link_to "Signup", 'signup' %></a></li>
+                      <li><%= link_to "Login", 'login' %></a></li>
+
+                    
+                    <% end %>
+
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
@@ -54,35 +62,6 @@
         <!-- /.container-fluid -->
     </nav>
 
-
-  <div class="header">
-    <div class="container">
-      <%= link_to(root_path) do %>
-      <h1><span class="dark">n</span>ewstand</h1>
-      <% end %>
-
-      <div class="nav">
-
-        <!-- Your code here -->
-        <% if current_user %>
-        <ul>
-          <li><%= current_user.email %></li>
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-        </ul>
-        <% else %>
-        <ul>
-          <li><%= link_to "Signup", 'signup' %></a></li>
-          <li><%= link_to "Login", 'login' %></a></li>
-
-        </ul>
-        <% end %>
-
-
-
-
-      </div>
-    </div>
-  </div>
 
   <%= yield %>
 
