@@ -1,21 +1,25 @@
+<img src="http://www.darrylburma.com/wp-content/uploads/2012/01/body-bg-blue-02.jpg" class="background-image">
+
 <div class="signup">
   <div class="container">
+    <div class="row">
+        <div class="col-lg-7 col-lg-offset-2 text-center">
+          <br>
+          <br>
+          <div class="form">
+          <h1 id="header">Sign up</h1>
 
-    <div class="form">
+          <%= form_for(@user) do |f| %>
+            <%= f.text_field :first_name, class: "sign_up", :placeholder => "First name" %>
+            <%= f.text_field :last_name, class: "sign_up", :placeholder => "Last name" %>
+            <%= f.email_field :email, class: "sign_up", :placeholder => "Email" %>
+            <%= f.text_field :username, class: "sign_up", :placeholder => "Username" %>
+            <%= f.password_field :password, class: "sign_up", :placeholder => "Password" %>
+            <%= f.submit "Create an account", class: "btn-submit" %>
+            <% end %>
 
-    <h1>Sign up</h1>
-
-    <%= form_for(@user) do |f| %>
-      <%= f.text_field :first_name, :placeholder => "First name" %>
-      <%= f.text_field :last_name, :placeholder => "Last name" %>
-      <%= f.email_field :email, :placeholder => "Email" %>
-      <%= f.text_field :username, :placeholder => "Username" %>
-      <%= f.password_field :password, :placeholder => "Password" %>
-      <%= f.submit "Create an account", class: "btn-submit" %>
-      <% end %>
-
-
+          </div>
+        </div>
     </div>
-
   </div>
 </div>
