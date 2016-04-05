@@ -1,0 +1,52 @@
+#header {
+  color: white;
+}
+
+.background-image {
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: -1;
+ /* Preserve aspet ratio */
+ max-width: 100%;
+ max-height: auto;
+}
+
+
+.btn-submit{
+  margin-top: 10px;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0);
+  border: 2px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.sign_up {
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+   font-weight: bold;
+   font-size: 1em;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+}
+
+:-ms-input-placeholder {
+   color: white;
+}
