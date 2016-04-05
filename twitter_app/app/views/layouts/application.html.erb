@@ -17,6 +17,7 @@
 
 </head>
 <body>
+  
   <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -53,7 +54,37 @@
         <!-- /.container-fluid -->
     </nav>
 
-<%= yield %>
+
+  <div class="header">
+    <div class="container">
+      <%= link_to(root_path) do %>
+      <h1><span class="dark">n</span>ewstand</h1>
+      <% end %>
+
+      <div class="nav">
+
+        <!-- Your code here -->
+        <% if current_user %>
+        <ul>
+          <li><%= current_user.email %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        </ul>
+        <% else %>
+        <ul>
+          <li><%= link_to "Signup", 'signup' %></a></li>
+          <li><%= link_to "Login", 'login' %></a></li>
+
+        </ul>
+        <% end %>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>
