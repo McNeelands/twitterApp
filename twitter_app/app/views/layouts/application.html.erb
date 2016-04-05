@@ -40,18 +40,12 @@
                     </li>
                     <!-- Your code here -->
                     <% if current_user %>
-
                       <li><%= current_user.email %></li>
                       <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-
                     <% else %>
-
                       <li><%= link_to "Signup", 'signup' %></a></li>
                       <li><%= link_to "Login", 'login' %></a></li>
-
-                    
                     <% end %>
-
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
@@ -65,5 +59,8 @@
 
   <%= yield %>
 
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
