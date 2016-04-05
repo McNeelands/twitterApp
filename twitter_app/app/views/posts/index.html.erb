@@ -1,39 +1,13 @@
-
-<body>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
+<body class="index_container">
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
-
           <div class="col-md-3">
-
-
-
-
               <!-- Blog Categories Well -->
-              <div class="well">
-                  <h4>Blog Categories</h4>
+              <div class="index_well">
+                  <h4 class="index_heading">Trending Categories</h4>
                   <div class="row">
-                      <div class="col-lg-6">
-                          <ul class="list-unstyled">
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <div class="col-lg-6">
+                      <div class="col-lg-12">
                           <ul class="list-unstyled">
                               <li><a href="#">Category Name</a>
                               </li>
@@ -50,8 +24,8 @@
               </div>
 
               <!-- Side Widget Well -->
-              <div class="well">
-                  <h4>Side Widget Well</h4>
+              <div class="index_well">
+                  <h4 class="index_heading">Side Widget Well</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
               </div>
 
@@ -61,20 +35,21 @@
             <!-- Blog Post Content Column -->
             <div class="col-lg-6">
 
-              <div class="well">
-                  <h4>Tweet:</h4>
+              <div class="tweet_well">
+                  <h4 class="index_heading">Tweet:</h4>
                    <%= form_for(:post) do |f| %>
-              			  <%= f.text_field :content, :placeholder => "140 characters or less..." %>
+              			  <%= f.text_field :content, class: "tweet_text", :placeholder => "140 characters or less..." %>
                       <%= f.hidden_field :user_id, :value => current_user.id %>
-              			  <%= f.submit "Tweet", class: "btn-submit" %>
+              			  <%= f.submit "Send Tweet", class: "tweet_btn" %>
               			<% end %>
               </div>
 
                 <hr>
 
-                <!-- Comment -->
-                <% @posts.reverse.each do |post| %>
+                <!-- Tweets -->
+
                 <div class="media">
+                  <% @posts.reverse.each do |post| %>
                     <a class="pull-left" href="#">
                         <img class="media-object" src="http://placehold.it/64x64" alt="">
                     </a>
@@ -82,20 +57,21 @@
                         <h4 class="media-heading"><%= post.user.first_name %>
                             <small>August 25, 2014 at 9:30 PM</small>
                         </h4>
-                        <p><%= post.content %></p>
+                        <p class="tweet_content"><%= post.content %></p>
                     </div>
                     <hr>
+                    <% end %>
                 </div>
             </div>
 
-            <% end %>
+
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-3">
 
                 <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Blog Search</h4>
+                <div class="index_well">
+                    <h4 class="index_heading">Blog Search</h4>
                     <div class="input-group">
                         <input type="text" class="form-control">
                         <span class="input-group-btn">
@@ -108,22 +84,10 @@
                 </div>
 
                 <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Blog Categories</h4>
+                <div class="index_well">
+                    <h4 class="index_heading">Blog Categories</h4>
                     <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <ul class="list-unstyled">
                                 <li><a href="#">Category Name</a>
                                 </li>
@@ -140,8 +104,8 @@
                 </div>
 
                 <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
+                <div class="index_well">
+                    <h4 class="index_heading">Side Widget Well</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                 </div>
 
