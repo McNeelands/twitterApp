@@ -1,5 +1,20 @@
-<h1>New User</h1>
+<div class="signup">
+  <div class="container">
 
-<%= render 'form' %>
+    <div class="form">
 
-<%= link_to 'Back', users_path %>
+    <h1>Sign up</h1>
+
+    <%= form_for(@user) { |f| %>
+      <%= f.text_field :first_name, :placeholder => "First name" %>
+      <%= f.text_field :last_name, :placeholder => "Last name" %>
+      <%= f.email_field :email, :placeholder => "Email" %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.submit "Create an account", class: "btn-submit" %>
+      <% } %>
+
+
+    </div>
+
+  </div>
+</div>
