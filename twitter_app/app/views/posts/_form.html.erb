@@ -1,0 +1,5 @@
+<%= form_for(:post) do |f| %>
+   <%= f.text_field :content, :placeholder => "140 characters or less..." %>
+   <%= f.hidden_field :user_id, :value => current_user.id %>
+   <%= f.submit "Tweet", id: "tweet-button", class: "btn-submit" %>
+ <% end %>
