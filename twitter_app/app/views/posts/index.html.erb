@@ -37,10 +37,10 @@
 
               <div class="tweet_well">
                   <h4 class="index_heading">Tweet:</h4>
-                   <%= form_for(:post) do |f| %>
-              			  <%= f.text_field :content, class: "tweet_text", :placeholder => "140 characters or less..." %>
-                      <%= f.hidden_field :user_id, :value => current_user.id %>
-              			  <%= f.submit "Send Tweet", class: "tweet_btn" %>
+                   <%= form_for(:post, :html => { :id => "form-tweet" }) do |f| %>
+              			  <%= f.text_field :content, id: "tweet-text", class: "tweet_text", :placeholder => "140 characters or less..." %>
+                      <%= f.hidden_field :user_id, id: "user-id", :value => current_user.id %>
+              			  <%= f.submit "Send Tweet", id: "tweet-button", class: "tweet_btn" %>
               			<% end %>
               </div>
 

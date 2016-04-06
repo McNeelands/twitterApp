@@ -15,15 +15,10 @@ def new
 end
 
 def create
+  @post = Post.new( user_id: params[:user_id], content: params[:content])
 
-  @post = Post.new(post_params)
-  
+  render json: @post.save
 
-  if @post.save
-    redirect_to posts_path
-  else
-    render 'new'
-  end
 end
 
 def edit
